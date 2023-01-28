@@ -24,8 +24,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: echo "GITHUB_TOKEN = $GITHUB_TOKEN"
-        run: echo "SONAR_TOKEN = $SONAR_TOKEN"
+        run: |
+          echo "Variaveis de Ambiente"  
+          echo "GITHUB_TOKEN = $GITHUB_TOKEN"
+          echo "SONAR_TOKEN = $SONAR_TOKEN"
 
       - name: Run Application
         run: go run calculo.go
